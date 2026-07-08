@@ -71,6 +71,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
 .mv{font-size:16px;font-weight:700;color:var(--tx)}
 .mv span{font-size:10px;font-weight:400;color:var(--tx2)}
 .btn{padding:8px 14px;border:1px solid var(--bd2);border-radius:7px;background:var(--bg);font-size:12px;font-weight:600;cursor:pointer;color:var(--tx);font-family:inherit}
+.btn-ghost{border:none;background:none;color:var(--tx2);font-weight:600;padding:10px 8px;flex:0 0 auto;box-shadow:none}
+.btn-ghost:hover{background:var(--bg2);border-radius:7px}
 .btn:hover{background:var(--bg2)}
 .btp{background:var(--tf);color:#fff;border-color:var(--tf)}.btp:hover{background:var(--tfd)}
 .bfull{width:100%;padding:10px;font-size:12px;font-weight:600;margin-top:4px}
@@ -354,7 +356,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       <div style="font-size:13px;font-weight:700;margin-bottom:8px">When was your surgery?</div>
       <input type="date" class="oinp" id="hyst-date" />
     </div>
-    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn bfull" onclick="on(0)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(2)" style="margin-top:0">Continue →</button></div>
+    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn btn-ghost" onclick="on(0)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(2)" style="margin-top:0">Continue →</button></div>
   </div>
 
   <div class="ostep" id="os2">
@@ -379,7 +381,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       <input type="text" id="ob-custom-sym" placeholder="Add your own symptom..." class="oinp" style="margin-bottom:0;flex:1">
       <button class="btn" onclick="addCustomSymptom('ob-syms','ob-custom-sym','sy')" style="flex-shrink:0;padding:8px 14px;font-size:12px">Add</button>
     </div>
-    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn bfull" onclick="on(1)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(3)" style="margin-top:0">Continue →</button></div>
+    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn btn-ghost" onclick="on(1)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(3)" style="margin-top:0">Continue →</button></div>
   </div>
 
   <div class="ostep" id="os3">
@@ -393,7 +395,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       <button class="ochip" onclick="op('ph','peri',this)">Irregular / Perimenopause</button>
       <button class="ochip" onclick="op('ph','post',this)">Post-menopause</button>
     </div>
-    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn bfull" onclick="on(2)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(4)" style="margin-top:0">Continue →</button></div>
+    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn btn-ghost" onclick="on(2)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(4)" style="margin-top:0">Continue →</button></div>
   </div>
 
   <div class="ostep" id="os4">
@@ -409,7 +411,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       <button class="ochip" onclick="oc(this,'gl','Mindfulness')">Mindfulness</button>
       <button class="ochip" onclick="oc(this,'gl','Understand HRT')">Understand HRT</button>
     </div>
-    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn bfull" onclick="on(3)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(5)" style="margin-top:0">Continue →</button></div>
+    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn btn-ghost" onclick="on(3)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(5)" style="margin-top:0">Continue →</button></div>
   </div>
 
   <div class="ostep" id="os5">
@@ -429,7 +431,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       <button class="ochip" onclick="op('pt','No',this)">No</button>
       <button class="ochip" onclick="op('pt','Complicated',this)">It's complicated</button>
     </div>
-    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn bfull" onclick="on(4)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(6)" style="margin-top:0">Continue →</button></div>
+    <div style="display:flex;gap:8px;margin-top:4px"><button class="btn btn-ghost" onclick="on(4)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" onclick="on(6)" style="margin-top:0">Continue →</button></div>
   </div>
 
   <div class="ostep" id="os6">
@@ -450,7 +452,7 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
       <input type="checkbox" id="consent-check" style="margin-top:2px;cursor:pointer;width:16px;height:16px;flex-shrink:0" onchange="toggleConsentBtn(this.checked)">
       <span>I understand I'm sharing health-related information with The Hormone Method, and I've read the <a href="#" onclick="event.preventDefault();openLegal('privacy','sc-ob')" style="color:var(--tf)">Privacy Policy</a>.</span>
     </label>
-    <div style="display:flex;gap:8px"><button class="btn bfull" onclick="on(5)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" id="consent-continue" onclick="finish()" disabled style="opacity:.5;margin-top:0">Begin my journey →</button></div>
+    <div style="display:flex;gap:8px"><button class="btn btn-ghost" onclick="on(5)" style="flex:0 0 auto;padding:10px 16px">← Back</button><button class="btn btp bfull" id="consent-continue" onclick="finish()" disabled style="opacity:.5;margin-top:0">Begin my journey →</button></div>
   </div>
 </div>
 </div>
@@ -923,6 +925,10 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
   </div>
   <div class="sl">Log today's symptoms</div>
   <div class="syms" id="today-syms"></div>
+  <div style="display:flex;gap:8px;margin-top:8px;margin-bottom:2px">
+    <input type="text" id="today-custom-sym" placeholder="Add your own symptom..." class="oinp" style="margin-bottom:0;flex:1" onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomSymptom('today-syms','today-custom-sym',null,true)}">
+    <button class="btn" onclick="addCustomSymptom('today-syms','today-custom-sym',null,true)" style="flex-shrink:0;padding:8px 14px;font-size:12px">Add</button>
+  </div>
   <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px">
     <button class="btn bfull" style="margin-top:0" onclick="gt('guide');ggd(0)">HRT info ↗</button>
     <button class="btn bfull" style="margin-top:0" onclick="gt('guide');ggd(1)">Partner ↗</button>
@@ -1709,7 +1715,20 @@ const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     <div class="secrow"><span class="secico">📤</span><div><p class="sectit">Export or delete anytime</p><p class="secdesc">Full control below — no waiting, no friction.</p></div></div>
     <div class="secrow"><span class="secico">🌍</span><div><p class="sectit">Full GDPR rights for EU and UK users</p><p class="secdesc">Access, correct, export, or erase your data anytime.</p></div></div>
   </div>
+  <div class="sl">Daily uplifting message</div>
+  <div class="card">
+    <div class="row" style="border:none;padding-bottom:8px">
+      <div class="rt">Morning message<small>A short, track-aware message plus a nudge to log how you're feeling — sent as a push notification.</small></div>
+      <input type="checkbox" id="notify-enabled" style="cursor:pointer;flex-shrink:0" onchange="toggleDailyNotify(this.checked)">
+    </div>
+    <div id="notify-time-wrap" style="display:none;margin-top:4px">
+      <div style="font-size:12px;font-weight:600;margin-bottom:6px">What time?</div>
+      <input type="time" id="notify-time" class="oinp" style="margin-bottom:0;max-width:160px" value="07:30" onchange="updateNotifyTime()">
+      <div style="font-size:10px;color:var(--tx3);margin-top:8px;line-height:1.5">Requires notification permission. On iOS, you'll be asked to allow this the first time you turn it on.</div>
+    </div>
+  </div>
   <div class="sl">Health profile</div>
+
   <div class="card">
     <div style="font-size:11px;color:var(--tx2);line-height:1.5;margin-bottom:12px">Made a mistake during setup, or has something changed? Update it here — no need to redo onboarding.</div>
     <div style="font-size:12px;font-weight:600;margin-bottom:8px">Where are you in your hormonal journey?</div>
@@ -1984,6 +2003,9 @@ async function saveProfile() {
       hysterectomy: S.hyst,
       hysterectomy_date: S.hystDate,
       track: S.track,
+      notify_enabled: S.notifyEnabled || false,
+      notify_hour: (S.notifyHour != null) ? S.notifyHour : 7,
+      notify_minute: (S.notifyMinute != null) ? S.notifyMinute : 30,
       onboarding_completed: true,
       updated_at: new Date().toISOString()
     });
@@ -1992,6 +2014,217 @@ async function saveProfile() {
     console.log('Profile save connection error:', err.message);
   }
 }
+
+// ============================================================
+// DAILY UPLIFTING MESSAGE + PUSH NOTIFICATIONS
+// Requires the app to be wrapped in Capacitor with
+// @capacitor/local-notifications installed. In a plain browser
+// (like Safari during development) these functions detect that
+// no native bridge exists and safely no-op.
+// ============================================================
+const UPLIFT_MESSAGES = {
+  cycle: [
+    "Good morning. Whatever today holds, you're showing up for yourself just by being here.",
+    "Your hormones are always working behind the scenes — today's a good day to notice how you're feeling and honor it.",
+    "You're building something good for yourself, one day at a time. Today is one more step in that direction.",
+    "Be kind to yourself today. That's always a good place to start.",
+    "You know your body better than anyone else does. Trust that today, whatever it brings.",
+    "Take a moment today to notice what your body needs — rest, movement, food, quiet. It's usually telling you.",
+    "Small, consistent choices add up more than any single perfect day. Today counts too.",
+    "Your cycle is information, not a limitation. Let it guide today gently.",
+    "Wherever you are in your cycle today, you're exactly where you're meant to be.",
+    "You don't have to earn a good day. You're allowed to simply have one.",
+    "Today's a good day to check in with yourself — no fixing required, just noticing.",
+    "You're doing better than you think you are."
+  ],
+  surgical: [
+    "Good morning. Healing isn't always visible, but it's happening.",
+    "Wherever you are in this transition, be as patient with yourself as you'd be with someone you love.",
+    "You've been rebuilding your baseline — that takes real strength, whether today feels easy or hard.",
+    "Be gentle with yourself today. That's enough.",
+    "You know your body better than anyone else does. Trust that today, whatever it brings.",
+    "Take a moment today to notice what your body needs — rest, movement, quiet, support. It's usually telling you.",
+    "Every day you show up for your recovery matters, even the quiet ones.",
+    "You didn't choose this transition, but you're the one showing up for it — that counts for a lot.",
+    "Today's a good day to check in with yourself — no fixing required, just noticing.",
+    "You're allowed to feel however you feel today, without needing a reason.",
+    "Progress since your surgery isn't always a straight line, and that's okay.",
+    "You're doing better than you think you are."
+  ],
+  noperiod: [
+    "Good morning. Your hormones are still doing quiet work behind the scenes, even without a cycle to mark it.",
+    "Wherever you are today, you're allowed to simply notice how you feel — no period needed to make it valid.",
+    "You're building a different kind of body awareness, one day at a time.",
+    "Be kind to yourself today. That's always a good place to start.",
+    "You know your body better than anyone else does. Trust that today, whatever it brings.",
+    "Take a moment today to notice what your body needs — rest, movement, food, quiet.",
+    "Small, consistent choices add up more than any single perfect day. Today counts too.",
+    "Your hormonal rhythm doesn't need a period to be real or worth honoring.",
+    "Today's a good day to check in with yourself — no fixing required, just noticing.",
+    "You don't have to earn a good day. You're allowed to simply have one.",
+    "Whatever pattern you're in right now, you're allowed to trust it without a monthly marker to confirm it.",
+    "You're doing better than you think you are."
+  ],
+  menopause: [
+    "Good morning. You crossed a threshold, not an ending — today's simply one more day in this chapter.",
+    "Whatever today holds, you're building something durable for the decades ahead.",
+    "Be kind to yourself today. That's always a good place to start.",
+    "You know your body better than anyone else does. Trust that today, whatever it brings.",
+    "Take a moment today to notice what your body needs — rest, movement, strength, quiet.",
+    "Small, consistent choices protect you for the long run. Today's choices count too.",
+    "This new baseline is still yours to shape — today's a good day to lean into that.",
+    "You don't have to earn a good day. You're allowed to simply have one.",
+    "Today's a good day to check in with yourself — no fixing required, just noticing.",
+    "Whatever this chapter looks like today, you're allowed to feel steady, strong, or soft — all of it counts.",
+    "Your right to feel vibrant didn't end with your hormone levels changing.",
+    "You're doing better than you think you are."
+  ],
+  strength: [
+    "There is a quiet strength in you that's carried you through more than you give yourself credit for.",
+    "You are resilient in ways you've never had to name out loud — it just shows up when you need it.",
+    "There's something magic about the way women adapt, again and again, without losing themselves.",
+    "You don't have to be unbreakable to be strong. Bending and still standing counts too.",
+    "You've survived every hard day you've ever had. That's not luck — that's you.",
+    "Being a woman moving through hormonal change is its own kind of quiet power.",
+    "You are allowed to take up space, feel deeply, and still be strong. It's not one or the other.",
+    "Your body has done extraordinary things — carried you through decades of change already.",
+    "Love yourself today the way you'd love someone you're fiercely proud of. You've earned it.",
+    "There's a kind of magic in a woman who keeps choosing herself, even quietly, even imperfectly.",
+    "You are not behind, broken, or too much. You are becoming — and that takes real strength.",
+    "The version of you a few years from now will thank you for how you're showing up today.",
+    "You carry more resilience than you realize — most of it invisible, all of it real.",
+    "Softness and strength live in you at the same time. That's not a contradiction, that's you.",
+    "You are worthy of love, rest, and celebration — not just when you've earned it, but simply because you exist.",
+    "Every woman before you who faced this same transition passed down more strength than she knew.",
+    "Notice how you talk to yourself today. Would you say it to your best friend?",
+    "If a friend spoke to herself the way you sometimes speak to yourself, you'd tell her to stop. That goes for you too.",
+    "Try today: catch one unkind thought about yourself, and rephrase it the way you'd comfort someone you love.",
+    "Whatever you'd say to comfort your best friend today, try saying it to yourself too.",
+    "The way you talk to yourself becomes the way you feel about yourself. Choose gently today.",
+    "Your inner voice can be a friend or a critic. Today, let it be a friend.",
+    "Speak to yourself the way you'd speak to someone you're trying to comfort, not someone you're trying to fix.",
+    "You extend so much patience to the people you love. Save a little of that for yourself today."
+  ]
+};
+
+
+
+function pickTodayMessage(track) {
+  const trackPool = UPLIFT_MESSAGES[track] || UPLIFT_MESSAGES.cycle;
+  const pool = trackPool.concat(UPLIFT_MESSAGES.strength);
+  const dayIndex = Math.floor(Date.now() / 86400000) % pool.length;
+  return pool[dayIndex];
+}
+
+function getLNPlugin() {
+  if (typeof Capacitor !== 'undefined' && Capacitor.isNativePlatform && Capacitor.isNativePlatform()) {
+    return Capacitor.Plugins ? Capacitor.Plugins.LocalNotifications : null;
+  }
+  return null;
+}
+
+function populateNotifySettings() {
+  const cb = document.getElementById('notify-enabled');
+  const timeInput = document.getElementById('notify-time');
+  const wrap = document.getElementById('notify-time-wrap');
+  if (!cb) return;
+  cb.checked = !!S.notifyEnabled;
+  wrap.style.display = S.notifyEnabled ? 'block' : 'none';
+  const h = (S.notifyHour != null ? S.notifyHour : 7);
+  const m = (S.notifyMinute != null ? S.notifyMinute : 30);
+  timeInput.value = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+}
+
+async function toggleDailyNotify(checked) {
+  const LocalNotifications = getLNPlugin();
+  if (checked) {
+    if (LocalNotifications) {
+      try {
+        const perm = await LocalNotifications.requestPermissions();
+        if (perm.display !== 'granted') {
+          document.getElementById('notify-enabled').checked = false;
+          alert('Notifications are off in your phone settings. You can turn them on for The Hormone Method under iOS Settings > Notifications.');
+          return;
+        }
+      } catch (err) {
+        console.log('Notification permission error:', err.message);
+      }
+    }
+    S.notifyEnabled = true;
+    document.getElementById('notify-time-wrap').style.display = 'block';
+    scheduleDailyNotification();
+  } else {
+    S.notifyEnabled = false;
+    document.getElementById('notify-time-wrap').style.display = 'none';
+    cancelDailyNotification();
+  }
+  saveProfile();
+}
+
+function updateNotifyTime() {
+  const val = document.getElementById('notify-time').value;
+  if (!val) return;
+  const parts = val.split(':').map(Number);
+  S.notifyHour = parts[0];
+  S.notifyMinute = parts[1];
+  scheduleDailyNotification();
+  saveProfile();
+}
+
+async function scheduleDailyNotification() {
+  if (!S.notifyEnabled) return;
+  const LocalNotifications = getLNPlugin();
+  if (!LocalNotifications) {
+    console.log('Local notifications not available in this environment (needs Capacitor + @capacitor/local-notifications).');
+    return;
+  }
+  const hour = (S.notifyHour != null) ? S.notifyHour : 7;
+  const minute = (S.notifyMinute != null) ? S.notifyMinute : 30;
+  const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  const message = pickTodayMessage(S.track || 'cycle');
+
+  const next = new Date();
+  next.setHours(hour, minute, 0, 0);
+  if (next.getTime() <= Date.now()) {
+    next.setDate(next.getDate() + 1);
+  }
+
+  try {
+    await LocalNotifications.cancel({ notifications: [{ id: 1 }] });
+    await LocalNotifications.schedule({
+      notifications: [{
+        id: 1,
+        title: greeting + ' 🌿',
+        body: message,
+        schedule: { at: next },
+        extra: { screen: 'today' }
+      }]
+    });
+  } catch (err) {
+    console.log('Notification scheduling error:', err.message);
+  }
+}
+
+async function cancelDailyNotification() {
+  const LocalNotifications = getLNPlugin();
+  if (!LocalNotifications) return;
+  try {
+    await LocalNotifications.cancel({ notifications: [{ id: 1 }] });
+  } catch (err) {
+    console.log('Notification cancel error:', err.message);
+  }
+}
+
+(function setupNotificationTapListener() {
+  if (typeof Capacitor !== 'undefined' && Capacitor.isNativePlatform && Capacitor.isNativePlatform()) {
+    const LocalNotifications = getLNPlugin();
+    if (LocalNotifications && LocalNotifications.addListener) {
+      LocalNotifications.addListener('localNotificationActionPerformed', () => {
+        gt('today');
+      });
+    }
+  }
+})();
 
 const FOOD = [
   {n:'Menstrual',f:'Replenishment · warmth · anti-inflammation',w:'Iron, magnesium, and anti-inflammatory foods are the priority.',eat:['Spinach + lentils (iron)','Salmon (omega-3)','Dark chocolate 85%+ (Mg)','Ginger + turmeric tea','Bone broth','Beets (iron + folate)','Pumpkin seeds (Mg + zinc)','Sweet potato','Eggs (protein + B12)'],av:['Alcohol (worsens cramping)','Excess caffeine (depletes Mg)','Processed sugar (inflammatory)','Fried foods'],supps:'Iron + C · Magnesium glycinate · Omega-3 · Ginger 500mg for cramping',c:'#FAECE7',tc:'#712B13'},
@@ -2044,7 +2277,7 @@ function getCurrentPhaseData() {
     return SURG[S.surgStage] || SURG.stable;
   }
   if (S.track === 'menopause') {
-    return { label: 'Post-menopause', sub: 'a new chapter', today: 'Your focus now is long-term protection — bones, heart, brain — and thriving in this chapter.', insight: 'You have crossed the threshold. This is not an ending — it is a new hormonal baseline.', sleep: '8–9', mvmt: 'Strength + walk', streak: S.streak || 0 };
+    return PH.post;
   }
   return PH[cpk] || PH.peri;
 }
@@ -2173,6 +2406,7 @@ function init() {
   if (S.gl.length) document.getElementById('prog-al').textContent = 'Your 30-day program is built around: ' + S.gl.slice(0,2).join(' and ') + '. Each day builds on the last.';
   document.getElementById('api-notice').style.display = 'none';
   loadCycleLogs();
+  scheduleDailyNotification();
 }
 
 function updatePhase(p) {
@@ -2203,7 +2437,7 @@ function buildSymTags() {
   const el = document.getElementById('today-syms');
   if (!el) return;
   el.innerHTML = '';
-  const syms = S.sy.length ? S.sy.slice(0, 8) : ['Fatigue', 'Anxiety', 'Sleep disruption'];
+  const syms = S.sy.length ? S.sy.slice(0, 10) : ['Fatigue', 'Anxiety', 'Sleep disruption', 'Brain fog', 'Mood swings', 'Hot flashes'];
   syms.forEach(s => {
     const b = document.createElement('button');
     b.className = 'syb';
@@ -2380,7 +2614,7 @@ function gt(t) {
   const i = tabs.indexOf(t);
   const navBtns = document.querySelectorAll('.nb');
   if (i >= 0 && navBtns[i]) navBtns[i].classList.add('on');
-  if (t === 'settings') populateHealthProfile();
+  if (t === 'settings') { populateHealthProfile(); populateNotifySettings(); }
   if (t === 'guide') ggd(0);
   if (t === 'track') gtk(0);
   if (t === 'track') gtk(0);
@@ -2744,29 +2978,69 @@ async function sendMsg() {
       })
     });
 
-    typing.remove();
-
-    let newMsgEl = null;
     if (!res.ok) {
+      typing.remove();
       const err = await res.json().catch(() => ({}));
       const e = document.createElement('div');
       e.className = 'mai';
       e.innerHTML = '⚠️ API error: ' + (err.error?.message || res.status) + '<br><br>Check that your API key is correct and has credits at console.anthropic.com';
       msgs.appendChild(e);
-      newMsgEl = e;
-    } else {
-      const data = await res.json();
-      const text = data.content.map(c => c.text || '').join('\n').trim();
-      const m = document.createElement('div');
-      m.className = 'mai';
-      m.innerHTML = formatCoachMarkdown(text);
-      msgs.appendChild(m);
-      newMsgEl = m;
+      e.scrollIntoView({ block: 'start' });
+      return;
     }
-    if (newMsgEl) newMsgEl.scrollIntoView({ block: 'start' });
+
+    // Stream the response: Anthropic sends Server-Sent Events, one JSON
+    // payload per line prefixed with "data: ". We accumulate text deltas
+    // and re-render the message as they arrive so it feels instant.
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let fullText = '';
+    let msgEl = null;
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n');
+      buffer = lines.pop(); // keep last partial line for next chunk
+
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const payload = line.slice(6).trim();
+        if (!payload || payload === '[DONE]') continue;
+        let evt;
+        try { evt = JSON.parse(payload); } catch { continue; }
+
+        if (evt.type === 'content_block_delta' && evt.delta && evt.delta.text) {
+          if (typing.parentNode) typing.remove();
+          // Check BEFORE we add new content — were they already following along at the bottom?
+          const wasNearBottom = (msgs.scrollHeight - msgs.scrollTop - msgs.clientHeight) < 80;
+          fullText += evt.delta.text;
+          if (!msgEl) {
+            msgEl = document.createElement('div');
+            msgEl.className = 'mai';
+            msgs.appendChild(msgEl);
+          }
+          msgEl.innerHTML = formatCoachMarkdown(fullText);
+          if (wasNearBottom) msgs.scrollTop = msgs.scrollHeight;
+        } else if (evt.type === 'error') {
+          if (typing.parentNode) typing.remove();
+          const e = document.createElement('div');
+          e.className = 'mai';
+          e.innerHTML = '⚠️ API error: ' + (evt.error?.message || 'Unknown error');
+          msgs.appendChild(e);
+          e.scrollIntoView({ block: 'start' });
+          return;
+        }
+      }
+    }
+
+    if (typing.parentNode) typing.remove();
+    if (msgEl) msgEl.scrollIntoView({ block: 'start' });
     return;
   } catch (err) {
-    typing.remove();
+    if (typing.parentNode) typing.remove();
     const e = document.createElement('div');
     e.className = 'mai';
     e.innerHTML = '⚠️ Connection error: ' + err.message;
@@ -3095,7 +3369,11 @@ async function enterApp(session) {
       S.hyst = data.hysterectomy || 'no';
       S.hystDate = data.hysterectomy_date || null;
       S.track = data.track || 'cycle';
-      S.surgStage = S.track === 'surgical' ? calcSurgicalStage(S.hystDate) : null;      document.getElementById('sc-main').classList.add('on');
+      S.surgStage = S.track === 'surgical' ? calcSurgicalStage(S.hystDate) : null;
+      S.notifyEnabled = data.notify_enabled || false;
+      S.notifyHour = (data.notify_hour != null) ? data.notify_hour : 7;
+      S.notifyMinute = (data.notify_minute != null) ? data.notify_minute : 30;
+      document.getElementById('sc-main').classList.add('on');
       if (S.pt === 'No') {
         const nb = document.getElementById('partner-nav');
         if (nb) nb.style.display = 'none';
