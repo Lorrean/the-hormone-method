@@ -13,7 +13,7 @@ workflows:
       - name: Build for simulator (no signing required)
         script: |
           xcodebuild build \
-            -workspace ios/App/App.xcworkspace \
+            -project ios/App/App.xcodeproj \
             -scheme App \
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator'
