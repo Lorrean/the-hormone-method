@@ -10,10 +10,6 @@ workflows:
         script: npm install
       - name: Sync Capacitor iOS project
         script: npx cap sync ios
-      - name: Install CocoaPods dependencies
-        script: |
-          cd ios/App
-          pod install
       - name: Build for simulator (no signing required)
         script: |
           xcodebuild build \
