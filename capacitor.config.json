@@ -1,5 +1,9 @@
 {
   "appId": "com.hormonemethod.app",
   "appName": "The Hormone Method",
-  "webDir": "www"
+  "webDir": "www",
+  "server": {
+    "url": "https://lorrean.github.io/the-hormone-method",
+    "cleartext": false
+  }
 }
