@@ -26,8 +26,10 @@ workflows:
       app_store_connect: codemagic_api_key
     environment:
       node: 22
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.hormonemethod.app
       vars:
-        BUNDLE_ID: "com.hormonemethod.app"
         XCODE_WORKSPACE: "ios/App/App.xcworkspace"
         XCODE_SCHEME: "App"
     scripts:
@@ -35,19 +37,12 @@ workflows:
         script: npm install
       - name: Sync Capacitor iOS project
         script: npx cap sync ios
-      - name: Fetch signing files
-        script: |
-          app-store-connect fetch-signing-files "$BUNDLE_ID" \
-            --type IOS_APP_STORE \
-            --create
       - name: Set up code signing
         script: |
-          keychain initialize
-          keychain add-certificates
           xcode-project use-profiles
       - name: Increment build number
         script: |
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$BUNDLE_ID" || echo 0)
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "com.hormonemethod.app" || echo 0)
           agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
         working_directory: ios/App
       - name: Build ipa for distribution
