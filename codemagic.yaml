@@ -41,7 +41,7 @@ workflows:
           xcode-project use-profiles
       - name: Increment build number
         script: |
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "com.hormonemethod.app" || echo 0)
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "6792948236" || echo 0)
           agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
         working_directory: ios/App
       - name: Build ipa for distribution
