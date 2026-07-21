@@ -25,7 +25,20 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSHealthShareUsageDescription</key>
-	<string>The Hormone Method reads your sleep data from Apple Health to show it alongside your symptom logs, so you can		<string>UIInterfaceOrientationPortrait</string>
+	<string>The Hormone Method reads your sleep data from Apple Health to show it alongside your symptom logs, so you can see how sleep connects to your hormonal patterns.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>The Hormone Method does not write data to Apple Health.</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
