@@ -26,9 +26,6 @@ workflows:
       app_store_connect: codemagic_api_key
     environment:
       node: 22
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.hormonemethod.app
       vars:
         BUNDLE_ID: "com.hormonemethod.app"
         XCODE_WORKSPACE: "ios/App/App.xcworkspace"
@@ -45,6 +42,8 @@ workflows:
             --create
       - name: Set up code signing
         script: |
+          keychain initialize
+          keychain add-certificates
           xcode-project use-profiles
       - name: Increment build number
         script: |
